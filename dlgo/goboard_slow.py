@@ -146,7 +146,7 @@ class GameState():
             next_board.place_stone(self.next_player, move.point)
         else:
             next_board = self.board
-            return GameState(next_board, self.next_player.other, self, move)
+        return GameState(next_board, self.next_player.other, self, move)
 
     @classmethod
     def new_game(cls, board_size):

@@ -20,6 +20,7 @@ class Point(namedtuple('Point', 'row col')):
         # These are very immutable.
         return self
 
+
 class Player(enum.Enum):
     black = 1
     white = 2
@@ -27,4 +28,3 @@ class Player(enum.Enum):
     @property
     def other(self):
         return Player.black if self == Player.white else Player.white
-
