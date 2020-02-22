@@ -1,5 +1,11 @@
 import copy
-from dlgo.gotypes import Player
+from dlgo.gotypes import Player, Point
+
+__all__ = [
+    'Board',
+    'GameState',
+    'Move',
+]
 
 
 class Move():
