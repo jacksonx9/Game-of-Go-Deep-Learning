@@ -1,35 +1,22 @@
-import enum
 import random
 
-from ..agent import Agent
+from dlgo.minimax.game_result import GameResult
+from dlgo.minimax.utils import reverse_game_result
+from dlgo.agent import Agent
 
 __all__ = [
     'MinimaxAgent',
 ]
 
 
-class GameResult(enum.Enum):
-    loss = 1
-    draw = 2
-    win = 3
-
-
-def reverse_game_result(game_result):
-    if game_result == GameResult.loss:
-        return game_result.win
-    if game_result == GameResult.win:
-        return game_result.loss
-    return GameResult.draw
-
-
 def best_result(game_state):
-    """Find the best result for next_player given this game state.
+    '''Find the best result for next_player given this game state.
     Returns:
         GameResult.win if next_player can guarantee a win
         GameResult.draw if next_player can guarantee a draw
         GameResult.loss if, no matter what next_player chooses, the
             opponent can still force a win
-    """
+    '''
     if game_state.is_over():
         if game_state.winner() == game_state.next_player:
             return GameResult.win
