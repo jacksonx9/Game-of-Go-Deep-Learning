@@ -92,9 +92,9 @@ class Board:
             elif neighbor_string.color == player:
                 if neighbor_string not in adjacent_same_color:
                     adjacent_same_color.append(neighbor_string)
-                else:
-                    if neighbor_string not in adjacent_opposite_color:
-                        adjacent_opposite_color.append(neighbor_string)
+            else:
+                if neighbor_string not in adjacent_opposite_color:
+                    adjacent_opposite_color.append(neighbor_string)
         new_string = GoString(player, [point], liberties)
 
         # Merge any adjacent strings of the same color.
